@@ -34,18 +34,18 @@ const arrowRight = document.getElementById("arrowRight");
 
 // // // // Fonction mise à jour de i// // // //
 
-function Update(i){
+function update(i){
 	image.src = "./assets/images/slideshow/" + slides[i].image;
 	tagLine.innerHTML = slides[i].tagLine;
 }
-Update(0);
+update(0);
 
 let currentSlide = 0;
 
 
 // // // // Fonction creation des bullets points// // // //
 
-let SelectedDot = document.getElementsByClassName("dot_selected");
+let dotSelected = document.getElementsByClassName("dot_selected");
 
 function createDots(){
 	const dots = document.querySelector('.dots');
@@ -60,7 +60,7 @@ function createDots(){
 		}	
 		dot.addEventListener('click', function(){
 		currentSlide = i;
-		Update(currentSlide);
+		update(currentSlide);
 		selectedDot();
 })		
 	}
@@ -89,12 +89,12 @@ arrowLeft.addEventListener('click', function() {
 	console.log('clic gauche');
 	if (currentSlide == 0){
 		currentSlide = 3;
-		Update(currentSlide);
+		update(currentSlide);
 	}
 	else{
 	currentSlide = currentSlide-1;
 	console.log(currentSlide);
-	Update(currentSlide);
+	update(currentSlide);
 	}
 	selectedDot();
 });
@@ -103,12 +103,12 @@ arrowRight.addEventListener('click', function() {
 	console.log('clic droit');
 	if (currentSlide == slidesLenght -1){
 		currentSlide = 0;
-		Update(currentSlide);
+		update(currentSlide);
 	}
 	else{
 	currentSlide = currentSlide+1;
 	console.log(currentSlide);
-	Update(currentSlide);
+	update(currentSlide);
 	}
 	selectedDot();
 });
